@@ -1,0 +1,44 @@
+{
+  "name": "callback-test",
+  "version": "1.0.0",
+  "description": "This tests the callback",
+  "main": "app/index.html",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "svg": "svgo -f ./app/images/icons -o ./app/images/icons",
+    "font": "npm run svg && svgtofont --sources ./app/images/icons --output ./app/fonts/Icon"
+  },
+  "svgtofont": {
+    "fontName": "icon",
+    "css": {
+      "output": "./app/css",
+      "cssPath": "../fonts/Icon/",
+      "include": "\\.(css)$"
+    },
+    "website": {
+      "logo": "./app/images/icons/logo.svg",
+      "title": "Callback test Icons",
+      "template": "font-preview-template.ejs"
+    }
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "open": "^9.1.0",
+    "svgo": "^3.0.2",
+    "svgtofont": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.0.0"
+  }
+}
